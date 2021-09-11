@@ -2,7 +2,6 @@ import React from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 import './navbar.css';
 import logo from '../logo.svg';
-import icons from './icons.svg';
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -14,7 +13,7 @@ function Navbar() {
                         <div className="menu-icon mr-3">
                             <MenuIcon />
                         </div>
-                        <div className="logo"><img src={logo} alt="logo" /></div>
+                        <Link to="/"><div className="logo"><img src={logo} alt="logo" /></div></Link>
                     </div>
                     <div className="col-7">
                         <input type="search" placeholder="search..." className="form-control" />

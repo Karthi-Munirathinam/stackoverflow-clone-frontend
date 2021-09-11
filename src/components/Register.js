@@ -10,16 +10,16 @@ function Register() {
                     <div className="card-body">
                         <form>
                             <div className="form-group mb-2">
-                                <label htmlFor="registername">Display name</label>
-                                <input name="name" type="email" className="form-control" id="registername" aria-describedby="emailHelp" />
+                                <label htmlFor="name">Display name</label>
+                                <input name="name" type="email" className="form-control" id="name" aria-describedby="emailHelp" />
                             </div>
                             <div className="form-group mb-2">
-                                <label htmlFor="registeremail">Email</label>
-                                <input name="email" type="email" className="form-control" id="registeremail" aria-describedby="emailHelp" />
+                                <label htmlFor="email">Email</label>
+                                <input name="email" type="email" className="form-control" id="email" aria-describedby="emailHelp" />
                             </div>
                             <div className="form-group mb-4">
-                                <label htmlFor="registerpassword">Password</label>
-                                <input name="password" type="password" className="form-control" id="registerpassword" />
+                                <label htmlFor="password">Password</label>
+                                <input name="password" type="password" className="form-control" id="password" />
                                 <small className="form-text text-muted">Passwords must contain at least eight characters, including at least 1 letter and 1 number.</small>
                             </div>
                             <div className="submit-btn">

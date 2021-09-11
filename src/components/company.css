@@ -1,0 +1,22 @@
+.company-container {
+  padding: 1.5rem;
+}
+.company-card-container {
+  padding: 1.2rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.img-container-company {
+  margin-right: 1.5rem;
+}
+.badge-item-job {
+  font-size: 0.75rem;
+  margin: 2px;
+  padding: 0.3rem 0.45rem;
+  font-weight: lighter;
+  text-decoration: none;
+}
+.company-desc {
+  font-size: 0.8rem;
+}

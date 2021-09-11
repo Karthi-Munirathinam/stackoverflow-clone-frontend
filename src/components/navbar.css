@@ -36,8 +36,12 @@
   display: flex;
   justify-content: center;
 }
-/* @media (max-width: 576px) {
-  .navbar-container {
-    padding: 0.35rem 1rem;
+
+.menu-icon {
+  display: none;
+}
+@media (max-width: 576px) {
+  .menu-icon {
+    display: block;
   }
-} */
+}

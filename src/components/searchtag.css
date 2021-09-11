@@ -1,0 +1,24 @@
+.tags-container {
+  padding: 1.5rem;
+  border-left: 1px solid #ccc;
+}
+.tag-desc {
+  font-size: 0.8rem;
+}
+.tag-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 14rem;
+  padding: 0.8rem;
+  margin: 0.2rem;
+  margin-top: 0.5rem;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+}

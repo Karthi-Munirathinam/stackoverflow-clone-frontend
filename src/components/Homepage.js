@@ -1,15 +1,18 @@
 import React from 'react'
 import HomeQuestionCard from './HomeQuestionCard'
 import './Homepage.css';
+import Sidebar from './Sidebar';
 function Homepage() {
     return (
-        <div className="container-lg">
+        <div className="container-fluid">
             <div className="row">
-                <div classname="col-3 sidebar">
-                    Sidebar
+                <div className="col-2">
+                    <div className="row">
+                        <Sidebar hlink="home" />
+                    </div>
                 </div>
-                <div className="col-sm-9 questions-container">
-                    <div className="row question-bar">
+                <div className="col-10 questions-container">
+                    <div className="question-bar row">
                         <h1 className="home-title col-6.5">
                             Top Questions
                         </h1>
@@ -17,10 +20,9 @@ function Homepage() {
                             <button className="btn btn-primary">Ask question</button>
                         </div>
                     </div>
-                    <hr />
+                    <hr className="row" />
                     <HomeQuestionCard />
                 </div>
-
             </div>
         </div>
     )

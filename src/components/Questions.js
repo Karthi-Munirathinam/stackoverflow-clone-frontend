@@ -1,24 +1,27 @@
 import React from 'react'
 import QuestionCard from './QuestionCard';
 import './Questions.css';
+import Sidebar from './Sidebar';
 
 function Questions() {
     return (
-        <div className="container-lg">
+        <div className="container-fluid">
             <div className="row">
-                <div classname="col-3 sidebar">
-                    Sidebar
+                <div className="col-2 sidebar">
+                    <div className="row">
+                        <Sidebar hlink="questions" />
+                    </div>
                 </div>
-                <div className="col-sm-9 questions-container">
+                <div className="col-10 questions-container">
                     <div className="row question-bar">
-                        <h1 className="col-sm-6 col-md-6">
+                        <h1 className="col-6.5">
                             All Questions
                         </h1>
-                        <div className="col-sm-6 col-md-4 text-center">
+                        <div className="col-5.5 text-right">
                             <button className="btn btn-primary">Ask question</button>
                         </div>
                     </div>
-                    <hr />
+                    <hr className="row" />
                     <QuestionCard />
                 </div>
             </div>
