@@ -1,0 +1,27 @@
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+.signup-card {
+  box-shadow: 0.5rem 0.5rem 3rem #bbbbbb;
+}
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit-btn input {
+  width: 100%;
+}
+.already-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.password-container {
+  display: flex;
+  justify-content: space-between;
+}

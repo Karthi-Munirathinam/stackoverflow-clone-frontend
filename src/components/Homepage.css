@@ -1,0 +1,19 @@
+.votes-home-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.votes-home,
+.answers-home,
+.views-home {
+  margin-right: 0.5rem;
+  padding: 0.5rem 0.4rem;
+}
+.votes-count-home {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.votes-text-home {
+  font-size: 0.75rem;
+}
