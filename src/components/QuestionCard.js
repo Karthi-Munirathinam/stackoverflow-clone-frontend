@@ -40,7 +40,7 @@ function QuestionCard({ questions }) {
                     <div className="row">
                         <div className="col-4">{
                             questions.tags.map((tag, index) => {
-                                return <a key={index} href="..." className="badge badge-item">{tag}</a>
+                                return <Link key={index} to="/" className="badge badge-item">{tag}</Link>
                             })
                         }
                         </div>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Companycard({ data }) {
     return (
@@ -16,7 +17,7 @@ function Companycard({ data }) {
                         <p className="company-desc">{data.description}</p>
                         <div>{
                             data.tags.map((tag, index) => {
-                                return <a key={index} href="..." className="badge badge-item">{tag}</a>
+                                return <Link key={index} to="/" className="badge badge-item">{tag}</Link>
                             })}
                             <a href="..." className="badge badge-item-job badge-primary">{data.jobs} jobs</a>
                         </div>

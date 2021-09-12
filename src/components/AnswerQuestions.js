@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 function AnswerQuestions(props) {
     const [question, setQuestion] = useState([]);
-    const [answer, setanswer] = useState('');
+    const [answer, setanswer] = useState();
     const [votes, setvotes] = useState();
     const [views, setviews] = useState();
     const history = useHistory();
@@ -106,6 +106,7 @@ function AnswerQuestions(props) {
                         </div>
                     </div>
                     <hr className="row" />
+
                     <form className="col-12" onSubmit={(e) => handlesubmit(e)}>
                         <label htmlFor="answer">Your answer</label>
                         <textarea name="answer" value={answer} onChange={(e) => setanswer(e.target.value)} className="form-control pb-4 mb-4"></textarea>

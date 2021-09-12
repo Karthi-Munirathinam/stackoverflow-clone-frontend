@@ -43,7 +43,7 @@ function HomeQuestionCard({ questions }) {
                         <div className="col-4">
                             {
                                 questions.tags.map(tag => {
-                                    return <a href="..." className="badge badge-item">{tag}</a>
+                                    return <Link to="/" className="badge badge-item">{tag}</Link>
                                 })
                             }
                         </div>
