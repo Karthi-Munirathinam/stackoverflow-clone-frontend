@@ -3,13 +3,14 @@ import Sidebar from './Sidebar';
 import axios from './Connection';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { useHistory } from 'react-router-dom';
 
 function AnswerQuestions(props) {
     const [question, setQuestion] = useState([]);
     const [answer, setanswer] = useState('');
     const [votes, setvotes] = useState();
     const [views, setviews] = useState();
-
+    const history = useHistory();
 
 
     const handlesubmit = async (e) => {
@@ -58,6 +59,7 @@ function AnswerQuestions(props) {
                 views,
                 answers: question.answers
             })
+            history.push('/');
 
         } catch (error) {
             console.log(error)
