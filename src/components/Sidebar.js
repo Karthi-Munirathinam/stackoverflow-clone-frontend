@@ -9,7 +9,7 @@ function Sidebar({ hlink }) {
                 <small className="text-muted text-uppercase sidebar-head">Public</small>
                 <Link className={`${hlink === "questions" ? "active-link" : ""}`} to="/questions"><li className={`sidebar-link btn ${hlink === "questions" ? "active-link-li" : ""}`}>Questions</li></Link>
                 <Link className={`${hlink === "tags" ? "active-link" : ""}`} to="/tags"><li className={`sidebar-link btn ${hlink === "tags" ? "active-link-li" : ""}`}>Tags</li></Link>
-                <Link className={`${hlink === "user" ? "active-link" : ""}`} to="/userprofile"><li className={`sidebar-link btn ${hlink === "user" ? "active-link-li" : ""}`}>Users</li></Link>
+                {/* <Link className={`${hlink === "user" ? "active-link" : ""}`} to="/userprofile"><li className={`sidebar-link btn ${hlink === "user" ? "active-link-li" : ""}`}>Users</li></Link> */}
                 <small className="text-muted text-uppercase sidebar-head">Find a job</small>
                 <Link className={`${hlink === "company" ? "active-link" : ""}`} to="/company"> <li className={`sidebar-link btn ${hlink === "company" ? "active-link-li" : ""}`}>Companies</li></Link >
 
