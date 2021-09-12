@@ -1,13 +1,13 @@
 import React from 'react'
 
-function QuestionCard() {
+function QuestionCard({ questions }) {
     return (
         <>
             <div className="row">
                 <div className="col-2 text-muted votes-container">
                     <div className="votes text-center">
                         <div className="votes-count">
-                            0
+                            {questions.votes}
                         </div>
                         <div className="votes-text">
                             votes
@@ -15,7 +15,7 @@ function QuestionCard() {
                     </div>
                     <div className="answers text-center">
                         <div className="votes-count">
-                            0
+                            {questions.answers.length}
                         </div>
                         <div className="votes-text">
                             answers
@@ -23,24 +23,27 @@ function QuestionCard() {
                     </div>
                     <div className="views text-center">
                         <div className="votes-text">
-                            0 view
+                            {questions.views} view
                         </div>
                     </div>
                 </div>
                 <div className="col-10">
                     <div className="row">
                         <div className="col-12">
-                            <h3 className="question_link">Filter Array to get sum of value for each name same date. Please refer the result Table</h3>
+                            <h3 className="question_link">{questions.questionTitle}</h3>
                             <div className="question_desc">
-                                This is the dataset I got. I want to filter sum of the value for each name in a same date. Please refer the result table I want. I want to filter like this. This is the Result Image Date
+                                {questions.description}
                             </div>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-4">
-                            <a href="..." class="badge badge-item">Primary</a>
+                        <div className="col-4">{
+                            questions.tags.map(tag => {
+                                return <a href="..." class="badge badge-item">{tag}</a>
+                            })
+                        }
                         </div>
-                        <div className="col-8">
+                        {/* <div className="col-8">
                             <div className="row text-center">
                                 <small className="col-12 text-muted">asked 57 secs ago</small>
                             </div>
@@ -50,7 +53,7 @@ function QuestionCard() {
                                     Name
                                 </span>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

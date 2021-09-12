@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import HomeQuestionCard from './HomeQuestionCard'
 import './Homepage.css';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
+import axios from './Connection'
+
 function Homepage() {
+    const [questions, setQuestionsdata] = useState([]);
+
+    useEffect(() => {
+        const getquestions = async () => {
+            try {
+                let data = await axios.get("/questions/getquestion");
+                setQuestionsdata(data.data)
+            } catch (error) {
+                console.log(error)
+            }
+
+        }
+        getquestions();
+    }, [])
     return (
         <div className="container-fluid">
             <div className="row">
@@ -17,11 +34,15 @@ function Homepage() {
                             Top Questions
                         </h1>
                         <div className="home-btn text-right col-5.5">
-                            <button className="btn btn-primary">Ask question</button>
+                            <Link to="/postquestions"><button className="btn btn-primary">Ask question</button></Link>
                         </div>
                     </div>
                     <hr className="row" />
-                    <HomeQuestionCard />
+                    {
+                        questions.map(ques => {
+                            return <HomeQuestionCard questions={ques} />
+                        })
+                    }
                 </div>
             </div>
         </div>

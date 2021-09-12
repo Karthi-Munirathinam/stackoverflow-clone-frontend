@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import QuestionCard from './QuestionCard';
 import './Questions.css';
 import Sidebar from './Sidebar';
+import axios from './Connection'
 
 function Questions() {
+
+    const [questions, setQuestionsdata] = useState([]);
+
+    useEffect(() => {
+        const getquestions = async () => {
+            try {
+                let data = await axios.get("/questions/getquestion");
+                setQuestionsdata(data.data)
+            } catch (error) {
+                console.log(error)
+            }
+
+        }
+        getquestions();
+    }, [])
+
     return (
         <div className="container-fluid">
             <div className="row">
@@ -18,11 +36,15 @@ function Questions() {
                             All Questions
                         </h1>
                         <div className="col-5.5 text-right">
-                            <button className="btn btn-primary">Ask question</button>
+                            <Link to="/postquestions"><button className="btn btn-primary">Ask question</button></Link>
                         </div>
                     </div>
                     <hr className="row" />
-                    <QuestionCard />
+                    {
+                        questions.map(ques => {
+                            return <QuestionCard questions={ques} />
+                        })
+                    }
                 </div>
             </div>
         </div>

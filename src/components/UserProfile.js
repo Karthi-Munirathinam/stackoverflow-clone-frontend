@@ -4,15 +4,15 @@ import Sidebar from './Sidebar';
 import './Userprofile.css';
 function UserProfile() {
     return (
-        <div className="container user-container">
+        <div className="container-fluid user-container">
             <div className="row">
-                <div classname="col-2 sidebar">
+                <div className="col-2">
                     <div className="row">
                         <Sidebar hlink="user" />
                     </div>
                 </div>
-                <div className="col-md-10 user-profile-container">
-                    <div className="user-pic-details row">
+                <div className="col-19 user-profile-container">
+                    <div className="user-pic-details">
                         <div className="user-pic col-2.5">
                             <img src="http://placehold.it/125x125" alt="userpic" height="125" width="125" style={{ borderRadius: "0.3rem" }} />
                         </div>
@@ -26,7 +26,7 @@ function UserProfile() {
                             <div className="btn-edit-container"><Link to="/editprofile"><button className="btn btn-outline-secondary">Edit profile</button></Link></div>
                         </div>
                     </div>
-                    <div className="user-stats row">
+                    <div className="user-stats">
                         <div class="col-12">
                             <div className="row user-stats-about">
                                 <div className="col-6">

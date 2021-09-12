@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import './Userprofile.css'
+import './Userprofile.css';
+
+
 
 function EditProfile() {
     return (
-        <div className="container user-container">
+        <div className="container-fluid user-container">
             <div className="row">
-                <div classname="col-2 sidebar">
+                <div className="col-2 sidebar">
                     <div className="row">
                         <Sidebar hlink="user" />
                     </div>
@@ -29,8 +31,8 @@ function EditProfile() {
                     <div className="row m-5 update-form">
                         <form className="col-8">
                             <div className="form-group  mb-2">
-                                <label htmlFor="name">Display name</label>
-                                <input name="name" type="email" className="form-control" id="name" aria-describedby="emailHelp" required />
+                                <label htmlFor="displayName">Display name</label>
+                                <input name="displayName" type="email" className="form-control" id="name" aria-describedby="emailHelp" required />
                             </div>
                             <div className="form-group  mb-2">
                                 <label htmlFor="location">Location</label>
@@ -43,7 +45,6 @@ function EditProfile() {
                             <div className="form-group  mb-4">
                                 <label htmlFor="aboutme">About me</label>
                                 <textarea name="about" className="form-control" id="aboutme" placeholder=""></textarea>
-
                             </div>
                             <div className="update-btn">
                                 <input type="submit" value="Save profile" className="btn btn-outline-primary" />
