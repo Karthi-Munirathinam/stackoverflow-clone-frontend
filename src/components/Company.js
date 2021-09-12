@@ -28,8 +28,8 @@ function Company({ login }) {
                     </div> */}
                     <hr className="row" />
                     {
-                        companydata.map(comp => {
-                            return <Companycard data={comp} />
+                        companydata.map((comp, index) => {
+                            return <Companycard key={index} data={comp} />
                         })
                     }
 

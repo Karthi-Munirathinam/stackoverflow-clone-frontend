@@ -1,8 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import axios from './Connection';
+import React, { useEffect, useState } from 'react'
+// import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import './Userprofile.css';
 function UserProfile({ login }) {
+    const [user, setuser] = useState([]);
+    useEffect(() => {
+        const getuser = async () => {
+            try {
+                let users = await axios.get(`users/getusers/${window.localStorage.getItem("user-id")}`);
+                setuser(users.data[0]);
+                console.log(users.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getuser();
+    }, [])
+
     return (
         <div className="container-fluid user-container">
             <div className="row">
@@ -18,16 +33,16 @@ function UserProfile({ login }) {
                         </div>
                         <div className="user-details col-9">
                             <div className="user-name">
-                                Karthi munirathinam
+                                {user.displayName}
                             </div>
                             <div className="user-location text-muted">
-                                Vellore,Tamil Nadu,India
+                                {user.location}
                             </div>
-                            <div className="btn-edit-container"><Link to="/editprofile"><button className="btn btn-outline-secondary">Edit profile</button></Link></div>
+                            {/* <div className="btn-edit-container"><Link to="/editprofile"><button className="btn btn-outline-secondary">Edit profile</button></Link></div> */}
                         </div>
                     </div>
                     <div className="user-stats">
-                        <div class="col-12">
+                        <div className="col-12">
                             <div className="row user-stats-about">
                                 <div className="col-6">
                                     <h5 className="stats-user">Stats</h5>
@@ -53,7 +68,7 @@ function UserProfile({ login }) {
                                 <div className="col-6">
                                     <h5 className="about-user">About</h5>
                                     <div className="about-me">
-                                        Your about me section is currently blank. Would you like to add one? Edit profile
+                                        {user.about ? user.about : "Your about me section is currently blank. Would you like to add one?"}
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +76,7 @@ function UserProfile({ login }) {
                                 <div className="col-sm-6 ">
                                     <div className="row">
                                         <div className="answers-title-num">
-                                            <div class="answers-title">Answers
+                                            <div className="answers-title">Answers
                                                 <span className="text-muted"> (0)</span>
                                             </div>
                                         </div>
@@ -74,11 +89,11 @@ function UserProfile({ login }) {
                                 <div className="col-sm-6">
                                     <div className="row">
                                         <div className="col-12 questions-title-num">
-                                            <span class="questions-title">Questions </span>
+                                            <span className="questions-title">Questions </span>
                                             <span className="text-muted">(0)</span>
                                         </div>
                                     </div>
-                                    <hr classname="row" />
+                                    <hr className="row" />
                                     <div className="row">
                                         <div className="col-12">You have not asked any questions</div>
                                     </div>

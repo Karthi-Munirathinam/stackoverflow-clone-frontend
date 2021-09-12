@@ -16,6 +16,7 @@ import Company from './components/Company';
 import SearchTag from './components/SearchTag';
 import { useEffect, useState } from 'react';
 import PostQuestions from './components/PostQuestions';
+import AnswerQuestions from './components/AnswerQuestions';
 
 function App() {
   const [login, setlogin] = useState(false);
@@ -28,6 +29,7 @@ function App() {
   }, [])
   const handleLogout = () => {
     window.localStorage.removeItem("app-token");
+    window.localStorage.removeItem("user-id");
     setlogin(false);
   }
 
@@ -44,6 +46,7 @@ function App() {
         <Route path="/forgotpassword">
           <ForgotPassword />
         </Route>
+
         {
           login ? (<>
             <Route path="/questions" exact>
@@ -52,10 +55,14 @@ function App() {
             <Route path="/postquestions" exact>
               <PostQuestions login={login} />
             </Route>
+            <Route path="/answerquestion/:id" login={login} component={AnswerQuestions} exact />
+            {/* <Route path="/answerquestion/:id">
+              <AnswerQuestions login={login} />
+            </Route> */}
             <Route path="/userprofile" exact>
               <UserProfile login={login} />
             </Route>
-            <Route path="/editprofile" exact>
+            <Route path="/editprofile/:id" exact>
               <EditProfile login={login} />
             </Route>
             <Route path="/tags" exact>
@@ -64,11 +71,14 @@ function App() {
             <Route path="/company" exact>
               <Company login={login} />
             </Route>
-          </>) : null
+            <Route path="/" exact>
+              <Homepage login={login} />
+            </Route>
+          </>) : <Route path="/" exact>
+            <Homepage login={login} />
+          </Route>
         }
-        <Route path="/" exact>
-          <Homepage />
-        </Route>
+
       </Switch>
     </Router>
   );

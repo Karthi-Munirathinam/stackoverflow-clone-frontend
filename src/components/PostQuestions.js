@@ -69,20 +69,20 @@ function PostQuestions({ login }) {
                     <div className="card col-md-6 p-3 signup-card">
                         <div className="card-body">
                             <form onSubmit={formik.handleSubmit}>
-                                <div class="col-12">
+                                <div className="col-12">
                                     <label htmlFor="questionTitle">Title</label>{formik.errors.questionTitle ? <span className="required">{formik.errors.questionTitle}</span> : null}
                                     <input type="text" name="questionTitle" value={formik.values.questionTitle} onChange={formik.handleChange} className="form-control" />
                                 </div>
-                                <div class="col-12">
+                                <div className="col-12">
                                     <label htmlFor="description">Description</label>{formik.errors.description ? <span className="required">{formik.errors.description}</span> : null}
                                     <textarea type="text" name="description" value={formik.values.description} onChange={formik.handleChange} className="form-control"></textarea>
                                 </div>
-                                <div class="col-12">
+                                <div className="col-12">
                                     <label htmlFor="tags">Tags</label>{formik.errors.tags ? <span className="required">{formik.errors.tags}</span> : null}
                                     <input type="text" name="tags" value={formik.values.tags} onChange={formik.handleChange} className="form-control" />
                                     <small>Separate tags using comma(,)</small>
                                 </div>
-                                <div class="col-12 text-center"><input type="submit" value="Submit" className="btn btn-primary" /></div>
+                                <div className="col-12 text-center"><input type="submit" value="Submit" className="btn btn-primary" /></div>
                             </form>
                         </div>
                     </div>

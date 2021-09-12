@@ -15,10 +15,10 @@ function Companycard({ data }) {
                         <small className="text-muted company-location">{data.location}</small>
                         <p className="company-desc">{data.description}</p>
                         <div>{
-                            data.tags.map(tag => {
-                                return <a href="..." class="badge badge-item">{tag}</a>
+                            data.tags.map((tag, index) => {
+                                return <a key={index} href="..." className="badge badge-item">{tag}</a>
                             })}
-                            <a href="..." class="badge badge-item-job badge-primary">{data.jobs} jobs</a>
+                            <a href="..." className="badge badge-item-job badge-primary">{data.jobs} jobs</a>
                         </div>
                     </div>
                 </div>

@@ -41,8 +41,8 @@ function Questions({ login }) {
                     </div>
                     <hr className="row" />
                     {
-                        questions.map(ques => {
-                            return <QuestionCard questions={ques} />
+                        questions.map((ques, index) => {
+                            return <QuestionCard key={index} questions={ques} />
                         })
                     }
                 </div>

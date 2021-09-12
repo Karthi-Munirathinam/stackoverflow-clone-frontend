@@ -9,7 +9,7 @@ function ForgotPassword() {
                         <form>
                             <small className="form-text text-muted mb-2">Forgot your account’s password or having trouble logging into your Team? Enter your email address and we’ll send you a recovery link.</small>
                             <div className="form-group mb-4">
-                                <label for="email">Email</label>
+                                <label htmlFor="email">Email</label>
                                 <input name="email" type="email" className="form-control" id="email" aria-describedby="emailHelp" />
                             </div>
 

@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
 import axios from './Connection'
 
-function Homepage() {
+function Homepage({ login }) {
     const [questions, setQuestionsdata] = useState([]);
 
     useEffect(() => {
@@ -16,7 +16,6 @@ function Homepage() {
             } catch (error) {
                 console.log(error)
             }
-
         }
         getquestions();
     }, [])
@@ -25,7 +24,7 @@ function Homepage() {
             <div className="row">
                 <div className="col-2">
                     <div className="row">
-                        <Sidebar hlink="home" />
+                        <Sidebar login={login} hlink="home" />
                     </div>
                 </div>
                 <div className="col-10 questions-container">
@@ -34,13 +33,17 @@ function Homepage() {
                             Top Questions
                         </h1>
                         <div className="home-btn text-right col-5.5">
-                            <Link to="/postquestions"><button className="btn btn-primary">Ask question</button></Link>
+                            {
+                                login
+                                    ? <Link to="/postquestions"><button className="btn btn-primary">Ask question</button></Link>
+                                    : <Link to="/login"><button className="btn btn-primary">Login to ask question</button></Link>
+                            }
                         </div>
                     </div>
                     <hr className="row" />
                     {
-                        questions.map(ques => {
-                            return <HomeQuestionCard questions={ques} />
+                        questions.map((ques, index) => {
+                            return <HomeQuestionCard key={index} questions={ques} />
                         })
                     }
                 </div>

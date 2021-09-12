@@ -14,6 +14,7 @@ function Login({ setlogin }) {
             let data = await axios.post('/users/login', { email, password });
             console.log(data);
             window.localStorage.setItem("app-token", data.data.token);
+            window.localStorage.setItem("user-id", data.data.id);
             setlogin(true);
             history.push('/');
         } catch (error) {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function QuestionCard({ questions }) {
     return (
@@ -30,7 +31,7 @@ function QuestionCard({ questions }) {
                 <div className="col-10">
                     <div className="row">
                         <div className="col-12">
-                            <h3 className="question_link">{questions.questionTitle}</h3>
+                            <Link to={`/answerquestion/${questions._id}`}><h3 className="question_link">{questions.questionTitle}</h3></Link>
                             <div className="question_desc">
                                 {questions.description}
                             </div>
@@ -38,8 +39,8 @@ function QuestionCard({ questions }) {
                     </div>
                     <div className="row">
                         <div className="col-4">{
-                            questions.tags.map(tag => {
-                                return <a href="..." class="badge badge-item">{tag}</a>
+                            questions.tags.map((tag, index) => {
+                                return <a key={index} href="..." className="badge badge-item">{tag}</a>
                             })
                         }
                         </div>

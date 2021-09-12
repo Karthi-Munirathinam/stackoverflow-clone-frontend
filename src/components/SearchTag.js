@@ -20,7 +20,7 @@ function SearchTag({ login }) {
                         <button className="btn btn-primary">Search</button>
                     </div> */}
                     <hr className="row" />
-                    <div class="row card-container">
+                    <div className="row card-container">
                         <TagCard />
                     </div>
                 </div>
