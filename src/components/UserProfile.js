@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import './Userprofile.css';
-function UserProfile() {
+function UserProfile({ login }) {
     return (
         <div className="container-fluid user-container">
             <div className="row">
                 <div className="col-2">
                     <div className="row">
-                        <Sidebar hlink="user" />
+                        <Sidebar login={login} hlink="user" />
                     </div>
                 </div>
                 <div className="col-19 user-profile-container">

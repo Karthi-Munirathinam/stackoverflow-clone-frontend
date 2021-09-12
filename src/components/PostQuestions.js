@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import axios from './Connection';
 
-function PostQuestions() {
+function PostQuestions({ login }) {
     const history = useHistory();
     const formik = useFormik({
         initialValues: {
@@ -57,7 +57,7 @@ function PostQuestions() {
             <div className="row">
                 <div className="col-2 sidebar">
                     <div className="row">
-                        <Sidebar hlink="questions" />
+                        <Sidebar login={login} hlink="questions" />
                     </div>
                 </div>
                 <div className="col-10 questions-container">

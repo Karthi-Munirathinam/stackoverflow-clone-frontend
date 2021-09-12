@@ -5,7 +5,7 @@ import './Questions.css';
 import Sidebar from './Sidebar';
 import axios from './Connection'
 
-function Questions() {
+function Questions({ login }) {
 
     const [questions, setQuestionsdata] = useState([]);
 
@@ -27,7 +27,7 @@ function Questions() {
             <div className="row">
                 <div className="col-2 sidebar">
                     <div className="row">
-                        <Sidebar hlink="questions" />
+                        <Sidebar login={login} hlink="questions" />
                     </div>
                 </div>
                 <div className="col-10 questions-container">

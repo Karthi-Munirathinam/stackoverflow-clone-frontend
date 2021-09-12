@@ -4,7 +4,7 @@ import Companycard from './Companycard'
 import Sidebar from './Sidebar';
 import axios from './Connection';
 
-function Company() {
+function Company({ login }) {
     const [companydata, setcompanydata] = useState([]);
     useEffect(() => {
         let getcompanydata = async () => {
@@ -18,7 +18,7 @@ function Company() {
             <div className="row">
                 <div className="col-2">
                     <div className="row">
-                        <Sidebar hlink="company" />
+                        <Sidebar login={login} hlink="company" />
                     </div>
                 </div>
                 <div className="col-10 company-container">

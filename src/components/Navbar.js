@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+
 import MenuIcon from '@material-ui/icons/Menu';
 import './navbar.css';
 import logo from '../logo.svg';

@@ -3,13 +3,13 @@ import './searchtag.css';
 import Sidebar from './Sidebar';
 import TagCard from './TagCard';
 
-function SearchTag() {
+function SearchTag({ login }) {
     return (
         <div className="container-fluid">
             <div className="row">
                 <div className="col-2">
                     <div className="row">
-                        <Sidebar hlink="tags" />
+                        <Sidebar login={login} hlink="tags" />
                     </div>
                 </div>
                 <div className="col-10 tags-container">

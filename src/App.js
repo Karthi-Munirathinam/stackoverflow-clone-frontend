@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import {
@@ -36,33 +35,37 @@ function App() {
     <Router>
       <Navbar login={login} handleLogout={handleLogout} />
       <Switch>
-        <Route path="/register">
+        <Route path="/register" exact>
           <Register />
         </Route>
-        <Route path="/login">
+        <Route path="/login" exact>
           <Login setlogin={setlogin} />
         </Route>
         <Route path="/forgotpassword">
           <ForgotPassword />
         </Route>
-        <Route path="/questions" exact>
-          <Questions />
-        </Route>
-        <Route path="/postquestions" exact>
-          <PostQuestions />
-        </Route>
-        <Route path="/userprofile" exact>
-          <UserProfile />
-        </Route>
-        <Route path="/editprofile" exact>
-          <EditProfile />
-        </Route>
-        <Route path="/tags" exact>
-          <SearchTag />
-        </Route>
-        <Route path="/company" exact>
-          <Company />
-        </Route>
+        {
+          login ? (<>
+            <Route path="/questions" exact>
+              <Questions login={login} />
+            </Route>
+            <Route path="/postquestions" exact>
+              <PostQuestions login={login} />
+            </Route>
+            <Route path="/userprofile" exact>
+              <UserProfile login={login} />
+            </Route>
+            <Route path="/editprofile" exact>
+              <EditProfile login={login} />
+            </Route>
+            <Route path="/tags" exact>
+              <SearchTag login={login} />
+            </Route>
+            <Route path="/company" exact>
+              <Company login={login} />
+            </Route>
+          </>) : null
+        }
         <Route path="/" exact>
           <Homepage />
         </Route>

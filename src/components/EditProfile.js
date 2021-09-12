@@ -5,13 +5,13 @@ import './Userprofile.css';
 
 
 
-function EditProfile() {
+function EditProfile({ login }) {
     return (
         <div className="container-fluid user-container">
             <div className="row">
                 <div className="col-2 sidebar">
                     <div className="row">
-                        <Sidebar hlink="user" />
+                        <Sidebar login={login} hlink="user" />
                     </div>
                 </div>
                 <div className="col-md-10 user-profile-container">
